@@ -41,10 +41,9 @@ defmodule UeberauthOpenam.MixProject do
       {:httpoison, "~> 0.11"},
       {:espec, "~> 1.7.0", only: :test},
       {:excoveralls, "~> 0.5", only: :test},
-      {:inch_ex, "~> 0.5.0", only: :docs},
-      {:earmark, "~> 1.2", only: :dev},
-      {:ex_doc, "~> 0.16", only: :dev},
-      {:mock, "~> 0.2", only: :test},
+      {:inch_ex, "~> 0.5.0", only: [:dev, :docs, :test]},
+      {:earmark, "~> 1.2", only: [:dev, :docs, :test]},
+      {:ex_doc, "~> 0.19", only: [:dev, :docs, :test]},
      ]
   end
 
