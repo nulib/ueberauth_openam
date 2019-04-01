@@ -1,8 +1,8 @@
 defmodule UeberauthOpenam.MixProject do
   use Mix.Project
 
-  @version "0.1.0"
-  @url     "https://github.com/mbklein/ueberauth_openam"
+  @version "0.2.0"
+  @url     "https://github.com/nulib/ueberauth_openam"
 
   def project do
     [
