@@ -2,7 +2,7 @@ defmodule UeberauthOpenam.MixProject do
   use Mix.Project
 
   @version "0.2.0"
-  @url     "https://github.com/nulib/ueberauth_openam"
+  @url "https://github.com/nulib/ueberauth_openam"
 
   def project do
     [
@@ -12,16 +12,16 @@ defmodule UeberauthOpenam.MixProject do
       name: "Ueberauth OpenAM strategy",
       description: "OpenAM strategy for use with Ueberauth",
       package: package(),
-      build_embedded: Mix.env == :prod,
+      build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       source_url: @url,
       homepage_url: @url,
       deps: deps(),
       preferred_cli_env: [
-        coveralls: :test, 
-        "coveralls.detail": :test, 
-        "coveralls.post": :test, 
-        "coveralls.html": :test, 
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test,
         espec: :test
       ],
       test_coverage: [tool: ExCoveralls, test_task: "espec"]
@@ -42,10 +42,10 @@ defmodule UeberauthOpenam.MixProject do
       {:httpoison, "~> 0.11"},
       {:espec, "~> 1.7.0", only: :test},
       {:excoveralls, "~> 0.5", only: :test},
-      {:inch_ex, "~> 0.5.0", only: [:dev, :docs, :test]},
-      {:earmark, "~> 1.2", only: [:dev, :docs, :test]},
-      {:ex_doc, "~> 0.19", only: [:dev, :docs, :test]},
-     ]
+      {:inch_ex, github: "rrrene/inch_ex", only: [:dev, :test]},
+      {:earmark, "~> 1.2", only: :docs},
+      {:ex_doc, "~> 0.19", only: :docs}
+    ]
   end
 
   defp package do
@@ -53,7 +53,7 @@ defmodule UeberauthOpenam.MixProject do
       files: ["lib", "mix.exs", "README.md", "LICENSE.md"],
       maintainers: ["Michael B. Klein"],
       licenses: ["MIT"],
-      links: %{"GitHub": @url}
+      links: %{GitHub: @url}
     ]
   end
 end
