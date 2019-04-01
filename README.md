@@ -2,7 +2,7 @@
 
 [![Build](https://circleci.com/gh/nulib/ueberauth_openam.svg?style=svg)](https://circleci.com/gh/nulib/ueberauth_openam)
 [![Coverage](https://coveralls.io/repos/github/nulib/ueberauth_openam/badge.svg?branch=master)](https://coveralls.io/github/nulib/ueberauth_openam?branch=master)
-[![Deps](https://beta.hexfaktor.org/badge/all/github/nulib/ueberauth_openam.svg)](https://beta.hexfaktor.org/github/nulib/ueberauth_openam)
+[![Documentation](http://inch-ci.org/github/nulib/ueberauth_openam.svg?branch=master)](http://inch-ci.org/github/nulib/ueberauth_openam)
 [![Hex.pm](https://img.shields.io/hexpm/v/ueberauth_openam.svg?maxAge=2592000)](https://hex.pm/packages/ueberauth_openam)
 
 [OpenAM](https://github.com/OpenIdentityPlatform/OpenAM) strategy for [Ueberauth](https://github.com/ueberauth/ueberauth)
