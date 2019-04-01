@@ -10,6 +10,7 @@ defmodule UeberauthOpenam.MixProject do
       version: @version,
       elixir: "~> 1.2",
       name: "Ueberauth OpenAM strategy",
+      description: "OpenAM strategy for use with Ueberauth",
       package: package(),
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env() == :prod,
