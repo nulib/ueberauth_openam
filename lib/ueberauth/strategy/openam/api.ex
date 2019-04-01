@@ -3,7 +3,6 @@ defmodule Ueberauth.Strategy.OpenAM.API do
   OpenAM server API implementation.
   """
 
-  use Ueberauth.Strategy
   alias Ueberauth.Strategy.OpenAM
 
   @doc "Returns the URL to the OpenAM server's login page"
