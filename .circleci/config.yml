@@ -9,6 +9,8 @@ jobs:
     working_directory: ~/app
     steps:
       - checkout
+      - run: mix local.hex --force
+      - run: mix local.rebar --force
       - restore_cache:
           keys:
             - v1-mix-cache-{{ .Branch }}-{{ checksum "mix.lock" }}
@@ -18,7 +20,7 @@ jobs:
           keys:
             - v1-build-cache-{{ .Branch }}
             - v1-build-cache
-      - run: make deps
+      - run: mix do deps.get, compile
       - save_cache:
           key: v1-mix-cache-{{ .Branch }}-{{ checksum "mix.lock" }}
           paths: "deps"
@@ -34,7 +36,8 @@ jobs:
       - save_cache:
           key: v1-build-cache
           paths: "_build"
-      - run: make test
-      - run: make report
+      - run: mix espec
+      - run: mix coveralls.circle
+      - run: mix inch.report
       - store_test_results:
           path: _build/test/lib/ueberauth_openam
