@@ -10,7 +10,7 @@ defmodule Ueberauth.Strategy.OpenAM.API do
   def login_url do
     settings(:base_url)
     |> URI.merge("UI/Login")
-    |> URI.to_string
+    |> URI.to_string()
   end
 
   @doc "Returns the name of the SSO Token cookie"
@@ -31,7 +31,7 @@ defmodule Ueberauth.Strategy.OpenAM.API do
 
   defp handle_validate_token_response({:error, %HTTPoison.Error{reason: reason}}) do
     {
-      :error, 
+      :error,
       Regex.named_captures(~r{.+=(?<exception>.+?)\s+(?<message>.+)$}, reason)
       |> Enum.map(fn {k, v} -> {String.to_atom(k), v} end)
       |> Enum.into(%{})
@@ -41,7 +41,7 @@ defmodule Ueberauth.Strategy.OpenAM.API do
   defp attribute_url do
     settings(:base_url)
     |> URI.merge("identity/attributes")
-    |> URI.to_string
+    |> URI.to_string()
   end
 
   defp settings(key) do

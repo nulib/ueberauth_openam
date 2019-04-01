@@ -64,9 +64,9 @@ defmodule Ueberauth.Strategy.OpenAM do
   end
 
   defp redirect_url(conn) do
-    OpenAM.API.login_url
+    OpenAM.API.login_url()
     |> URI.merge("?goto=#{callback_url(conn)}")
-    |> URI.to_string
+    |> URI.to_string()
   end
 
   defp handle_token(conn, nil) do
@@ -89,7 +89,7 @@ defmodule Ueberauth.Strategy.OpenAM do
     conn
     |> set_errors!([error(reason.exception, reason)])
   end
-  
+
   defp fetch_user(token) do
     token
     |> OpenAM.API.redeem_token()
