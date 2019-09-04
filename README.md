@@ -9,7 +9,7 @@
 
 ## Installation
 
-  1. Add `ueberauth` and `ueberauth_openam` to your list of dependencies in `mix.exs`:
+1. Add `ueberauth` and `ueberauth_openam` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -20,7 +20,7 @@ def deps do
 end
 ```
 
-  2. Ensure `ueberauth_openam` is started before your application:
+2. Ensure `ueberauth_openam` is started before your application:
 
 ```elixir
 def application do
@@ -28,7 +28,7 @@ def application do
 end
 ```
 
-  3. Configure the OpenAM integration in `config/config.exs`:
+3. Configure the OpenAM integration in `config/config.exs`:
 
 ```elixir
 config :ueberauth, Ueberauth,
@@ -38,12 +38,29 @@ config :ueberauth, Ueberauth,
   ]}]
 ```
 
-  4. In `AuthController` use the OpenAM strategy in your `login/4` function:
+4. Add the request and callback routes in your router (below are defaults):
+
+```
+get "/:provider", AuthController, :request
+get "/:provider/callback", AuthController, :callback
+```
+
+5. In your auth controller include the Üeberauth plug and implement the callback routes for success and failure:
 
 ```elixir
-def login(conn, _params, _current_user, _claims) do
-  conn
-  |> Ueberauth.Strategy.OpenAM.handle_request!
+defmodule MyApp.AuthController do
+  use MyApp.Web, :controller
+
+  plug Ueberauth
+
+
+  def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
+    ...
+  end
+
+  def callback(%{assigns: %{ueberauth_failure: _fails}} = conn, _params) do
+    ...
+  end
 end
 ```
 
