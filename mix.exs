@@ -55,7 +55,7 @@ defmodule UeberauthOpenam.MixProject do
     [
       files: ["lib", "mix.exs", "README.md", "LICENSE.md"],
       maintainers: ["Michael B. Klein"],
-      licenses: ["Apache2"],
+      licenses: ["Apache-2.0"],
       links: %{GitHub: @url}
     ]
   end
