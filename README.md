@@ -2,7 +2,6 @@
 
 [![Build](https://github.com/nulib/ueberauth_openam/actions/workflows/build.yml/badge.svg)](https://github.com/nulib/ueberauth_openam/actions/workflows/build.yml)
 [![Coverage](https://coveralls.io/repos/github/nulib/ueberauth_openam/badge.svg?branch=main)](https://coveralls.io/github/nulib/ueberauth_openam?branch=main)
-[![Documentation](http://inch-ci.org/github/nulib/ueberauth_openam.svg?branch=master)](http://inch-ci.org/github/nulib/ueberauth_openam)
 [![Hex.pm](https://img.shields.io/hexpm/v/ueberauth_openam.svg)](https://hex.pm/packages/ueberauth_openam)
 
 [OpenAM](https://github.com/OpenIdentityPlatform/OpenAM) strategy for [Ueberauth](https://github.com/ueberauth/ueberauth)

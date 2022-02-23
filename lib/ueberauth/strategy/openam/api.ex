@@ -20,7 +20,7 @@ defmodule Ueberauth.Strategy.OpenAM.API do
   @doc "Redeem an OpenAM SSO Token for the user attributes"
   def redeem_token(token) do
     attribute_url()
-    |> HTTPoison.get([], params: %{subjectid: token})
+    |> http_client().get([], params: %{subjectid: token})
     |> handle_validate_token_response()
   end
 
@@ -47,4 +47,6 @@ defmodule Ueberauth.Strategy.OpenAM.API do
     {_, settings} = Application.get_env(:ueberauth, Ueberauth)[:providers][:openam]
     settings[key]
   end
+
+  defp http_client, do: Application.get_env(:ueberauth_openam, :http_client, HTTPoison)
 end
